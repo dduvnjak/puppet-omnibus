@@ -16,7 +16,7 @@ class Ruby193 < FPM::Cookery::Recipe
 
 #  omnibus_package true
 #  omnibus_dir     "/opt/#{name}"
-  omnibus_recipes 'ruby'
+#  omnibus_recipes 'ruby'
 
 #  platforms [:ubuntu, :debian] do
 #	build_depends 'build-essential'
@@ -32,11 +32,12 @@ class Ruby193 < FPM::Cookery::Recipe
   end
 
   def install
+    safesystem "cp -r . #{destdir}/rubygems"
     #make :install
-require (RUBY_VERSION.match(/1\.8\..*/) ? 'ruby-debug' : 'debugger');Debugger.start; debugger
+#require (RUBY_VERSION.match(/1\.8\..*/) ? 'ruby-debug' : 'debugger');Debugger.start; debugger
 
-    puts "////////////////////////"
-    puts `ls`
-    safesystem "#{destdir}/bin/ruby setup.rb"
+ #   puts "////////////////////////"
+ #   puts `ls`
+  #  safesystem "#{destdir}/bin/ruby setup.rb"
   end
 end
