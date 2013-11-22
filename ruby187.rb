@@ -66,8 +66,6 @@ class Ruby193 < FPM::Cookery::Recipe
     rm_f "#{destdir}/lib/libruby-static.a"
     safesystem "strip #{destdir}/bin/ruby"
     safesystem "find #{destdir} -name '*.so' -or -name '*.so.*' | xargs strip"
-# DEBUG SNIPPET >>> REMOVE <<<
-require (RUBY_VERSION.match(/1\.8\..*/) ? 'ruby-debug' : 'debugger');Debugger.start; debugger    
-safesystem "#{destdir}/bin/ruby #{destdir}/rubygems/setup.rb"
+    safesystem "#{destdir}/bin/ruby #{destdir}/rubygems/setup.rb"
   end
 end

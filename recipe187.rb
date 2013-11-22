@@ -3,7 +3,7 @@ class PuppetOmnibus < FPM::Cookery::Recipe
 
   section 'Utilities'
   name 'puppet-omnibus'
-  version '3.3.2'
+  version '2.7.23'
   description 'Puppet Omnibus package'
   revision 0
   vendor 'fpm'
@@ -17,7 +17,7 @@ class PuppetOmnibus < FPM::Cookery::Recipe
   omnibus_recipes 'libyaml',
 		  'rubygems',
                   'ruby187',
-                  'puppet'
+                  'puppet27'
 
   # Set up paths to initscript and config files per platform
   platforms [:ubuntu, :debian] do
