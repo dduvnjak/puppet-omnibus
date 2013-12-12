@@ -27,11 +27,10 @@ class Ruby193 < FPM::Cookery::Recipe
                   'build-essential',
                   'libffi-dev',
                   'libgdbm-dev'
-    depends 'libffi6',
-            'libncurses5',
+    depends 'libncurses5',
             'libreadline6',
-            'libssl1.0.0',
-            'libtinfo5',
+            'libssl0.9.8 | libssl1.0.0',
+          #  'libtinfo5',
             'zlib1g',
             'libgdbm3'
   end
