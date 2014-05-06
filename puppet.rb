@@ -21,11 +21,12 @@ class PuppetGem < FPM::Cookery::Recipe
     gem_install 'facter',      '1.7.3'
     gem_install 'json_pure',   '1.8.0'
     gem_install 'hiera',       '1.2.1'
-#    gem_install 'deep_merge',  '1.0.0'
-#    gem_install 'rgen',        '0.6.5'
-#    gem_install 'ruby-augeas', '0.4.1'
-#    gem_install 'ruby-shadow', '2.2.0'
-#    gem_install 'gpgme',       '2.0.2'
+    gem_install 'mcollective', '2.2.3'
+    gem_install 'deep_merge',  '1.0.0'
+    gem_install 'rgen',        '0.6.5'
+    gem_install 'ruby-augeas', '0.4.1'
+    gem_install 'ruby-shadow', '2.2.0'
+    gem_install 'gpgme',       '2.0.2'
     gem_install name,          version
 
     # Download init scripts and conf
@@ -59,7 +60,7 @@ class PuppetGem < FPM::Cookery::Recipe
 
   platforms [:ubuntu, :debian] do
     def build_files
-      system "curl -O https://raw.github.com/puppetlabs/puppet/#{version}/ext/debian/puppet.conf"
+      #system "curl -O https://raw.github.com/puppetlabs/puppet/#{version}/ext/debian/puppet.conf"
       system "curl -O https://raw.github.com/puppetlabs/puppet/#{version}/ext/debian/puppet.init"
       system "curl -O https://raw.github.com/puppetlabs/puppet/#{version}/ext/debian/puppet.default"
       # Set the real daemon path in initscript defaults
@@ -67,7 +68,7 @@ class PuppetGem < FPM::Cookery::Recipe
     end
     def install_files
       etc('puppet').mkdir
-      etc('puppet').install builddir('puppet.conf') => 'puppet.conf'
+      #etc('puppet').install builddir('puppet.conf') => 'puppet.conf'
       etc('init.d').install builddir('puppet.init') => 'puppet'
       etc('default').install builddir('puppet.default') => 'puppet'
       chmod 0755, etc('init.d/puppet')
@@ -76,7 +77,7 @@ class PuppetGem < FPM::Cookery::Recipe
 
   platforms [:fedora, :redhat, :centos] do
     def build_files
-      safesystem "curl -O https://raw.github.com/puppetlabs/puppet/#{version}/ext/redhat/puppet.conf"
+      #safesystem "curl -O https://raw.github.com/puppetlabs/puppet/#{version}/ext/redhat/puppet.conf"
       safesystem "curl -O https://raw.github.com/puppetlabs/puppet/#{version}/ext/redhat/client.init"
       safesystem "curl -O https://raw.github.com/puppetlabs/puppet/#{version}/ext/redhat/client.sysconfig"
       # Set the real daemon path in initscript defaults
@@ -84,7 +85,7 @@ class PuppetGem < FPM::Cookery::Recipe
     end
     def install_files
       etc('puppet').mkdir
-      etc('puppet').install builddir('puppet.conf') => 'puppet.conf'
+      #etc('puppet').install builddir('puppet.conf') => 'puppet.conf'
       etc('init.d').install builddir('client.init') => 'puppet'
       etc('sysconfig').install builddir('client.sysconfig') => 'puppet'
       chmod 0755, etc('init.d/puppet')

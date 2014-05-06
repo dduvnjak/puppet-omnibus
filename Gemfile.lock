@@ -9,7 +9,6 @@ GEM
     childprocess (0.3.9)
       ffi (~> 1.0, >= 1.0.11)
     clamp (0.6.1)
-    columnize (0.3.6)
     facter (1.7.3)
     ffi (1.9.0)
     fpm (0.4.42)
@@ -36,19 +35,11 @@ GEM
     http_parser.rb (0.5.3)
     json (1.8.1)
     json_pure (1.8.1)
-    linecache (0.46)
-      rbx-require-relative (> 0.0.4)
     puppet (3.3.1)
       facter (~> 1.6)
       hiera (~> 1.0)
       rgen (~> 0.6.5)
-    rbx-require-relative (0.0.9)
     rgen (0.6.6)
-    ruby-debug (0.10.4)
-      columnize (>= 0.1)
-      ruby-debug-base (~> 0.10.4.0)
-    ruby-debug-base (0.10.4)
-      linecache (>= 0.3)
     systemu (2.5.2)
 
 PLATFORMS
@@ -56,4 +47,3 @@ PLATFORMS
 
 DEPENDENCIES
   fpm-cookery (= 0.16.2)
-  ruby-debug (~> 0.10.4)
