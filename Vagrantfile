@@ -28,16 +28,20 @@ Vagrant.configure("2") do |config|
     node3.vm.box_url  = "http://puppet-vagrant-boxes.puppetlabs.com/ubuntu-server-12042-x64-vbox4210.box"
   end
 
+  config.vm.define :wheezy do |node4|
+    node4.vm.hostname = "wheezy"
+    node4.vm.box      = "debian-wheezy-amd64"
+    node4.vm.box_url  = "http://puppet-vagrant-boxes.puppetlabs.com/debian-73-x64-virtualbox-puppet.box"
+  end
+
   config.vm.provision "puppet" do |puppet|
     puppet.manifests_path = "puppet_provisioning"
     puppet.manifest_file  = "site.pp"
   end
 
-  #config.vm.provision "shell", path: "vagrant-build.sh"
-
   config.vm.provision "shell" do |s|
     s.path = "vagrant-build.sh"
-    s.privileged = false
+    s.privileged = true
   end
 
 end
