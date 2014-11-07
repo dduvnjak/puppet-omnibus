@@ -30,5 +30,6 @@ class Ruby193 < FPM::Cookery::Recipe
 
   def install
     make :install
+    safesystem "cp -Pv #{workdir}/ssl_certs/* #{destdir}/ssl/certs/"
   end
 end
