@@ -2,7 +2,7 @@ class Ruby193 < FPM::Cookery::Recipe
   description 'RubyGems'
 
   name 'rubygems'
-  version '2.4.5'
+  version '2.1.11'
   revision 1
   homepage 'https://rubygems.org/'
   source 'http://production.cf.rubygems.org/rubygems/rubygems-2.4.5.tgz'
