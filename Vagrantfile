@@ -4,6 +4,8 @@
 Vagrant.configure("2") do |config|
 
   config.vm.synced_folder "./", "/vagrant"
+  config.vm.synced_folder "../../workspace", "/workspace"
+
 
   config.vm.provider "virtualbox" do |v|
     v.customize ["modifyvm", :id, "--memory", "1024"]

@@ -2,11 +2,11 @@ class Ruby193 < FPM::Cookery::Recipe
   description 'RubyGems'
 
   name 'rubygems'
-  version '2.4.2'
+  version '2.4.5'
   revision 1
   homepage 'https://rubygems.org/'
-  source 'http://production.cf.rubygems.org/rubygems/rubygems-2.1.11.tgz'
-  sha256 '75b841bfbbafe1cfc556630d2368e654dd2f5aec457d12d1a3ae69d2e487a2b7'
+  source 'http://production.cf.rubygems.org/rubygems/rubygems-2.4.5.tgz'
+  sha256 '47d182ba52da02d4400601efbf62f64c25ff83856f8e269f8289333f292566d9'
 
   maintainer '<dario@atlantbh.com>'
   vendor     'fpm'
